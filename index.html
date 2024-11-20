@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haley Schmidt Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa 0%, #cfd8dc 100%);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+   
+    #container {
+      display: flex;
+      width: 750px;
+      height: 500px;
+      max-width: 90vw;
+      background-color: #ffffff;
+      border-radius: 20px;
+      overflow: scroll;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);}
+    
+    /* Sidebar styling */
+    #sidebar {
+      background-color: #63ab79;
+      width: 175px;
+      height: flex;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 40px;
+      gap: 20px;}
+    
+    #sidebar button {
+      background: none;
+      border: none;
+      color: #433;
+      font-size: 1.2em;
+      font-weight: 500;
+      padding: 15px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      border-radius: 6px;
+      width: 80%;
+      font-family: 'Poppins', sans-serif;}
+    
+    #sidebar button:hover {
+      background-color: #71cc8c ;
+      transform: scale(1.025);}
+    
+    #sidebar button.active {
+      background-color: # #71cc8c;}
+    
+    /* Main content area styling */
+    #content {
+      flex: 1;
+      padding: 50px;}
+    
+    #top-section {
+      height: 170px;
+      background-image: url("https://images.unsplash.com/photo-1493589976221-c2357c31ad77?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      border-radius: 15px;}
+    
+    #bottom-section {
+      text-align: center;
+      padding-top: 70px;
+    padding-bottom: 50px;}
+    
+    #name {
+      color: #433;
+      font-size: 1.5em;
+      font-weight: 700;
+      margin: 100px 0;}
+    
+    #title {
+      color: #666;
+      font-size: 1.1em;
+      margin-top:-80px;
+      margin-bottom: 10px;}
+    
+    .content-section {
+      display: none;
+      font-size: 1em;
+      color: #433;}
+    
+    .content-section.active {display: block;}
+    .cv-link {
+      color: #0077b5;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 10px;
+      display: inline-block;
+      transition: color 0.3s;}
+    
+    .cv-link:hover {color: #005582;}
+    
+    /* Mobile styling */
+    @media (max-width: 767px) {
+      #container {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;}
+      
+      #sidebar {
+        flex-direction: row;
+        width: 100%;
+        padding: 10px;
+        gap: 10px;}
+      
+      #sidebar button {
+        font-size: 0.9em;
+        padding: 10px 5px;
+        width: auto;
+        flex-grow: 1;}
+      
+      #top-section {height: 150px;}
+      #bottom-section {padding-top: 50px;}
+      #name {font-size: 1.2em;}
+      #title {font-size: 1em;} 
+    }
+  </style>
+  
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+      document.querySelectorAll('#sidebar button').forEach(button => {
+        button.classList.remove('active');
+      });
+      document.getElementById(sectionId + '-button').classList.add('active'); }
+  </script>
+  
+  </head>
+  
+  <body>
+  <div id="container">
+    <!-- Sidebar with buttons -->
+    <div id="sidebar">
+      <button id="about-button" onclick="showSection('about')">About Me</button>
+      <button id="cv-button" onclick="showSection('cv')">CV</button>
+      
+    </div>
+    <!-- Main content area -->
+    <div id="content">
+      <div id="top-section">
+      <div id="bottom-section">
+        <h1 id="name">Haley Schmidt</h1>
+        <h2 id="title">Fourth-Year Student Pharmacist<br>University of South Carolina</h2>
+     
+        <!-- About Me Section -->
+        <div id="about" class="content-section">
+          <p>My name is Haley Schmidt and I am a fourth-year pharmacy student at the University of South Carolina. I am interested in ambulatory care, with passions specifically in treating underserved populations. I think that pharmacists are in a unique position as an accessable member of the health care team and able to connect with patients in a variety of avenues. I hope that my future will be able to utilize this quality, and I will be able to impact my community in a truly meaningful way.</p>
+          <p>Please reach out at my email listed below: <a href=" mailto:hls5@email.sc.edu">hls5@email.sc.edu</a>.</p>
+        </div>
+        <!-- CV Section -->
+        <div id="cv" class="content-section">
+          <p>View my CV below:</p>
+          <a class="cv-link" href="https://drive.google.com/file/d/1gjZT4_C7FAlLOnh_NW1ZzO3mDQJAI8x1/view?usp=sharing" target="_blank">View CV</a>
+        </div>
+  </html>
